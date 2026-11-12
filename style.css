@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px 16px;
+  background: #f3f3f3;
+  color: #222;
+  font-family: sans-serif;
+}
+
+.app {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.top-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+button {
+  padding: 10px 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  color: #222;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.workspace {
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+}
+
+.canvas-scroll {
+  position: relative;
+  width: 100%;
+  max-height: 650px;
+  overflow: auto;
+  background-color: #fafafa;
+  background-image:
+    linear-gradient(45deg, #eee 25%, transparent 25%),
+    linear-gradient(-45deg, #eee 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #eee 75%),
+    linear-gradient(-45deg, transparent 75%, #eee 75%);
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0;
+}
+
+canvas {
+  display: none;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  vertical-align: top;
+  touch-action: none;
+  cursor: none;
+}
+
+#brushCursor {
+  position: absolute;
+  display: none;
+  width: 100px;
+  height: 100px;
+  border: 1.5px solid rgba(30, 30, 30, 0.85);
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+#placeholder {
+  padding: 100px 10px;
+  color: #888;
+  font-size: 14px;
+}
+
+.zoom-panel,
+.brush-panel {
+  margin-top: 18px;
+}
+
+.zoom-controls,
+.brush-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto 16px;
+  color: #555;
+  font-size: 13px;
+}
+
+.zoom-controls input,
+.brush-controls input {
+  flex: 1;
+  min-width: 0;
+  accent-color: #555;
+}
+
+#zoomValue {
+  width: 45px;
+  text-align: right;
+}
+
+#brushValue {
+  width: 48px;
+  text-align: right;
+}
+
+.history-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.history-controls button {
+  min-width: 120px;
+}
+
+.help {
+  margin: 18px 0;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+#status {
+  color: #888;
+  font-size: 12px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .workspace {
+    padding: 10px;
+  }
+
+  #placeholder {
+    padding: 70px 10px;
+  }
+
+  .history-controls button {
+    min-width: 110px;
+  }
+}

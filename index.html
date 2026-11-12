@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ぴこぷに</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>ぴこぴこぷにぷに</h1>
+
+    <div class="top-controls">
+      <button id="loadButton">画像を読み込む</button>
+      <button id="loadImage1">画像1</button>
+      <button id="loadImage2">画像2</button>
+      <input type="file" id="fileInput" accept="image/*" hidden>
+    </div>
+
+    <section class="workspace">
+      <div id="placeholder">
+        画像を読み込んでください
+      </div>
+
+      <div class="canvas-scroll" id="canvasArea">
+        <canvas id="canvas"></canvas>
+        <div id="brushCursor"></div>
+      </div>
+
+      <div id="zoomPanel" class="zoom-panel" hidden>
+        <div class="zoom-controls">
+          <span>縮小</span>
+          <input type="range" id="zoomSlider" min="50" max="200" value="100">
+          <span>拡大</span>
+          <span id="zoomValue">100%</span>
+        </div>
+        <button id="confirmButton">画像を決定</button>
+      </div>
+
+      <div id="brushPanel" class="brush-panel" hidden>
+        <div class="brush-controls">
+          <span>変形範囲</span>
+          <input type="range" id="brushSlider" min="10" max="250" value="100">
+          <span id="brushValue">100px</span>
+        </div>
+      </div>
+
+      <div id="historyPanel" class="history-controls" hidden>
+        <button id="undoButton" disabled>一つ戻る</button>
+        <button id="resetButton" disabled>変形をリセット</button>
+      </div>
+    </section>
+
+    <p class="help">
+      ドラッグ：伸ばす・引っ張る<br>
+      長押し：ふくらませる<br>
+      クリック：大きくぷるぷる揺れる
+    </p>
+
+    <p id="status">画像を選択してください</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
